@@ -5,6 +5,7 @@ loop {
 clientSocket = serverSocket.accept
 #Recebe Info
 puts 'Recebendo Jogada'
+clientSocket.puts("Escolha entre PAR ou IMPAR")
 escolha = clientSocket.gets.chomp.upcase
 puts 'Jogador fez sua escolha'
 clientSocket.puts "Você Escolheu #{escolha}\nAgora Basta Ecolher Seu Numero"
