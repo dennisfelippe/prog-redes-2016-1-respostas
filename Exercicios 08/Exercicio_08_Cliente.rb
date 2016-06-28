@@ -1,7 +1,8 @@
-require 'socket'
+require 'socket' # Abre Conexão
 host = 'localhost'
 port = 5000
 threads = []
+
 for i in 1..1000 do
 t = Thread.start(TCPSocket.new(host, port)) do |socket|
 socket.puts('candidatos?')
@@ -13,6 +14,6 @@ socket.close
 end
 threads.push(t)
 end
-threads.each do |t|
+threads.each do |t| #Aguarda Para Fechamento
 t.join
-end
+end'
